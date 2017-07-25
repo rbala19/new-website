@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'events.apps.EventsConfig',
+    'internal.apps.InternalConfig',
 ]
 
 MIDDLEWARE = [
@@ -88,7 +88,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'events.Member'
+AUTH_USER_MODEL = 'internal.Member'
 
 
 # Internationalization

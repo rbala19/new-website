@@ -28,10 +28,10 @@ class Event(models.Model):
 semester_validator = RegexValidator(r'(fa|sp)20[0-9][0-9]')
 
 class Member(AbstractUser):
-    semester_joined = models.CharField([semester_validator], max_length=6)
-    status = models.IntegerField()
-    bio = models.TextField()
-    attendance = models.DecimalField(max_digits=5, decimal_places=2)
+    semester_joined = models.CharField([semester_validator], max_length=6, blank=True)
+    status = models.IntegerField(default=0)
+    bio = models.TextField(blank=True)
+    attendance = models.DecimalField(max_digits=5, decimal_places=2, default=0)
 
     def get_status(self):
         if self.status == 0:
