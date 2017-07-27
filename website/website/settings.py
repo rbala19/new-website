@@ -90,6 +90,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = 'internal.Member'
 
+LOGIN_REDIRECT_URL = '/internal/events/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

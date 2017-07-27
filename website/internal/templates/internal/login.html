@@ -1,0 +1,21 @@
+{% extends 'internal/base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block pagecontent %}
+	<div class="absolute-center">
+		<h1>THE BERKELEY FORUM</h1>
+
+		<form id="login-form" method="post" action="{% url 'internal:login' %}">
+			{% csrf_token %}
+			<input name="username" type="text" class="text-field" placeholder="Username">
+			<input name="password" type="password" class="text-field" placeholder="Password">
+			<input type="submit" value="LOG IN" id="login-button">
+			<input type="hidden" name="next" value="{{ next }}">
+		</form>
+
+		{% if form.errors %}
+			<p> Your username and password didn't match. Please try again.</p>
+		{% endif %}
+	</div>
+{% endblock %}

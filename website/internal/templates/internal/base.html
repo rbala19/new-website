@@ -1,0 +1,16 @@
+{% load static %}
+
+<html>
+    <head>
+		<meta charset="utf-8">
+		<title>
+			The Berkeley Forum - {% block title %}{% endblock %}
+		</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'internal/style.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+	<body>
+		{% block pagecontent %}
+		{% endblock %}
+	</body>
+</html>

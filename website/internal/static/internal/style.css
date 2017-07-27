@@ -1,0 +1,65 @@
+/* General formatting */
+
+body {
+	background-color: #022C51;
+	overflow: hidden;
+}
+
+h1 {
+	color: white;
+	font: 72px/84px 'Roboto', Arial, sans-serif;
+}
+
+p {
+	color: #7C7C7C;
+	font: 16px/150% 'Roboto', Arial, sans-serif;
+}
+
+/* Login View */
+
+.absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+
+.text-field {
+	display: block;
+	width: 480px;
+	height: 60px;
+	padding: 10px;
+	margin: auto;
+	margin-bottom: 5px;
+	text-align: center;
+	font: 20px/150% 'Roboto', Arial, sans-serif;
+}
+
+#login-button {
+	display: block;
+	width: 480px;
+	height: 60px;
+	margin: auto;
+	border: 0;
+	background: none;
+	box-shadow: none;
+	border-radius: 0px;
+	background-color: #7C7C7C;
+	font: bold 20px/150% 'Roboto', Arial, sans-serif;
+	color: #022C51;
+	cursor: pointer;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+}
+
+#login-button:hover {
+	background-color: black;
+	color: white;
+}
+
+#login-form {
+	margin-top: 100px;
+}
