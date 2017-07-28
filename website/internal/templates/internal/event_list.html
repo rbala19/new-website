@@ -1,9 +1,15 @@
-{% if event_list %}
-	<ul>
-	{% for event in event_list %}
-		<li><a href="internal:events/{{ event.name }}/">{{ event.title }}</a></li>
-	{% endfor %}
-	</ul>
-{% else %}
-	<p>No events available.</p>
-{% endif %}
+{% extends 'internal/base.html' %}
+
+{% block title %}Events{% endblock %}
+
+{% block pagecontent %}
+	{% if event_list %}
+		<ul>
+		{% for event in event_list %}
+			<li><a href="internal:events/{{ event.name }}/">{{ event.title }}</a></li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>No events available.</p>
+	{% endif %}
+{% endblock %}

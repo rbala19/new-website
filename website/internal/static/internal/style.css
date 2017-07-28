@@ -1,6 +1,8 @@
 /* General formatting */
 
 body {
+	margin: 0;
+	padding: 0;
 	background-color: #022C51;
 	overflow: hidden;
 }
@@ -10,9 +12,50 @@ h1 {
 	font: 72px/84px 'Roboto', Arial, sans-serif;
 }
 
+h5 {
+	color: white;
+	margin: 0;
+	font: 16px/150% 'Roboto', Arial, sans-serif;
+}
+
 p {
 	color: #7C7C7C;
 	font: 16px/150% 'Roboto', Arial, sans-serif;
+}
+
+/* Base Template */
+
+#navbar {
+	width: 250px;
+	height: 100%;
+	float: left;
+}
+
+.navbar-header {
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 0;
+	padding: 30px;
+}
+
+#navbar a {
+	display: block;
+	text-decoration: none;
+	font: 20px/150% 'Roboto', Arial, sans-serif;
+	color: white;
+	padding: 15px 15px 15px 30px;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+}
+
+#navbar a:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+#navbar .active {
+	background-color: rgba(0, 0, 0, 0.3);
+	font-weight: bold;
 }
 
 /* Login View */
@@ -63,3 +106,5 @@ p {
 #login-form {
 	margin-top: 100px;
 }
+
+/* Event List View */

@@ -1,4 +1,7 @@
 {% load static %}
+{% load tags %}
+
+{% url 'event_list' as event_list %}
 
 <html>
     <head>
@@ -10,7 +13,13 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
 	<body>
-		{% block pagecontent %}
-		{% endblock %}
+		<div id="navbar" style="{% block nav-visibility %}{% endblock %}">
+			<h5 class='navbar-header'>THE BERKELEY FORUM</h5>
+			<a class="{% active request event_list %}" href="{{ event_list }}">Events</a>
+		</div>
+		<div id="container">
+			{% block pagecontent %}
+			{% endblock %}
+		</div>
 	</body>
 </html>
