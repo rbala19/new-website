@@ -40,6 +40,8 @@ class Event(models.Model):
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     created_by = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='created_events')
     point_person = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='pp_events')
+    confirmed = models.BooleanField(default=False)
+    complete = models.BooleanField(default=False)
 
     # link fields
     facebook_link = models.CharField(max_length=300)
@@ -47,11 +49,12 @@ class Event(models.Model):
     elf_link = models.CharField(max_length=300)
     elf_exemption_link = models.CharField(max_length=300)
     fbcover_link = models.CharField(max_length=300)
-    websitephoto_link = models.CharField(max_length=300)
+    website_photo_link = models.CharField(max_length=300)
     seal_link = models.CharField(max_length=300)
 
-    def get_speaker_name(self):
-        return '%s %s' % (speaker_first_name, speaker_last_name)
+    @property
+    def speaker_full_name(self):
+        return u'%s %s' % (self.speaker_first_name, self.speaker_last_name)
 
     def __unicode__(self):
         return u'%s' % self.name

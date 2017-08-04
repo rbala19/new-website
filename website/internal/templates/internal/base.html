@@ -2,8 +2,8 @@
 {% load static %}
 {% load tags %}
 
-{% url 'internal:event_list' as event_list %}
-{% url 'internal:member_list' as member_list %}
+{% url 'internal:event_list' as event_list_url %}
+{% url 'internal:member_list' as member_list_url %}
 
 <html>
     <head>
@@ -17,8 +17,8 @@
 	<body>
 		<div id="navbar" style="{% block nav-visibility %}{% endblock %}">
 			<h5 class='navbar-header'>THE BERKELEY FORUM</h5>
-			<a class="{% active request event_list %}" href="{{ event_list }}">Events</a>
-			<a class="{% active request member_list %}" href="{{ member_list }}">Directory</a>
+			<a class="{% active request event_list_url %}" href="{{ event_list_url }}">Events</a>
+			<a class="{% active request member_list_url %}" href="{{ member_list_url }}">Directory</a>
 		</div>
 		<div id="container">
 			{% block pagecontent %}

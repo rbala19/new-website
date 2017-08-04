@@ -6,6 +6,7 @@ class MemberAdmin(admin.ModelAdmin):
     actions = ['delete_selected']
     ordering = ['username']
     list_filter = ('status', 'semester_joined')
+    filter_horizontal = ('committees', 'subcommittees', 'divisions')
     list_display = ('username', 'full_name', 'email', 'status', 'title')
     search_fields = ('username', 'first_name', 'last_name', 'email')
 
@@ -15,25 +16,26 @@ class MemberAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
     actions = ['delete_selected']
     ordering = ['name']
-    list_filter = ('created_by', 'point_person')
-    list_display = ('name','title', 'speaker_full_name', 'time', 'venue', 'point_person')
+    list_filter = ('created_by', 'point_person', 'complete')
+    list_display = ('name','title', 'speaker_full_name', 'time', 'venue', 'point_person',
+                    'complete')
     search_fields = ('name', 'title', 'speaker_first_name', 'speaker_last_name', 'point_person')
-
-    def speaker_full_name(self, o):
-        return o.get_speaker_name()
 
 class CommitteeAdmin(admin.ModelAdmin):
     ordering = ['name']
-    list_display = ('name', 'friendly_name', 'vp', 'members')
+    filter_horizontal = ('members',)
+    list_display = ('name', 'friendly_name', 'vp')
 
 class SubCommitteeAdmin(admin.ModelAdmin):
     ordering = ['name']
-    list_filter = ('parent_committee')
-    list_display = ('name', 'friendly_name', 'parent_committee', 'project_members', 'members')
+    list_filter = ('members',)
+    filter_horizontal = ('members',)
+    list_display = ('name', 'friendly_name', 'parent_committee', 'project_manager')
 
 class DivisionAdmin(admin.ModelAdmin):
     ordering = ['name']
-    list_display = ('name', 'friendly_name', 'director', 'members')
+    filter_horizontal = ('members',)
+    list_display = ('name', 'friendly_name', 'director')
 
 admin.site.register(Member, MemberAdmin)
 admin.site.register(Event, EventAdmin)

@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from .models import Event
 
 def event_list(request):
-    lst = Event.objects.order_by('name').values()
+    lst = Event.objects.filter(complete=False).order_by('name')
     context = {'event_list': lst}
     return render(request, 'internal/event_list.html', context)
 
