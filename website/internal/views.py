@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from .models import Event
 
 def event_list(request):
-    lst = Event.objects.order_by('name')
+    lst = Event.objects.order_by('name').values()
     context = {'event_list': lst}
     return render(request, 'internal/event_list.html', context)
 
@@ -15,7 +15,8 @@ def register(request):
     return HttpResponse("You're trying to register")
 
 def member_list(request):
-    return HttpResponse("You're at the member list.")
+    context = {}
+    return render(request, 'internal/member_list.html', context)
 
 def member_details(request, username):
     return HttpResponse("You're looking at member %s" % username)
