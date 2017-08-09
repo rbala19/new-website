@@ -5,23 +5,28 @@
 
 {% block pagecontent %}
 	<div class="content">
-		<table>
-			<tr>
-				<th>Status</th>
-				<th>Event Title</th>
-				<th>Speaker</th>
-				<th>Date</th>
-				{% if event_list %}
-					{% for event in event_list %}
-						<tr class='event-row'>
-							<td>{{ event.confirmed }}</td>
-							<td>{{ event.title }}</td>
-							<td>{{ event.speaker_full_name }}</td>
-							<td>{{ event.time }}</td>
-						</tr>
-					{% endfor %}
-				{% else %}
-					<p>No events available.</p>
-				{% endif %}
+		<table class="list-table">
+			<tr class="header-row">
+				<th class='status-col'>Status</th>
+				<th class='long-col'>Event Title</th>
+				<th class='short-col'>Speaker</th>
+				<th class='short-col'>Date</th>
+			</tr>
+			{% if event_list %}
+				{% for event in event_list %}
+					<tr class='event-row'>
+						{% if event.confirmed %}
+							<td class='status-confirmed'>&middot;</td>
+						{% else %}
+							<td class='status-not-confirmed'>&middot;</td>
+						{% endif %}
+						<td class='half-row'>{{ event.title }}</td>
+						<td class='quarter-row'>{{ event.speaker_full_name }}</td>
+						<td class='quarter-row'>{{ event.time }}</td>
+					</tr>
+				{% endfor %}
+			{% else %}
+				<p>No events available.</p>
+			{% endif %}
 	</div>
 {% endblock %}

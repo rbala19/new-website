@@ -36,7 +36,7 @@ class Event(models.Model):
     speaker_last_name = models.CharField(max_length=100)
     speaker_bio = models.TextField()
     projected_attendance = models.IntegerField()
-    venue = models.TextField()
+    venue = models.TextField(default='TBD')
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     created_by = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='created_events')
     point_person = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='pp_events')
@@ -44,13 +44,13 @@ class Event(models.Model):
     complete = models.BooleanField(default=False)
 
     # link fields
-    facebook_link = models.CharField(max_length=300)
-    eventbrite_link = models.CharField(max_length=300)
-    elf_link = models.CharField(max_length=300)
-    elf_exemption_link = models.CharField(max_length=300)
-    fbcover_link = models.CharField(max_length=300)
-    website_photo_link = models.CharField(max_length=300)
-    seal_link = models.CharField(max_length=300)
+    facebook_link = models.CharField(max_length=300, blank=True)
+    eventbrite_link = models.CharField(max_length=300, blank=True)
+    elf_link = models.CharField(max_length=300, blank=True)
+    elf_exemption_link = models.CharField(max_length=300, blank=True)
+    fbcover_link = models.CharField(max_length=300, blank=True)
+    website_photo_link = models.CharField(max_length=300, blank=True)
+    seal_link = models.CharField(max_length=300, blank=True)
 
     @property
     def speaker_full_name(self):

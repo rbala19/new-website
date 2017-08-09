@@ -42,7 +42,7 @@ p {
 #navbar a {
 	display: block;
 	text-decoration: none;
-	font: 20px/150% 'Roboto', Arial, sans-serif;
+	font: 18px/150% 'Roboto', Arial, sans-serif;
 	color: white;
 	padding: 15px 15px 15px 30px;
 	-moz-transition: all .5s ease;
@@ -121,4 +121,61 @@ p {
 	height: 100%;
 }
 
+.list-table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	width: 100%;
+	font: 14px/150% 'Roboto', Arial, sans-serif;
+}
 
+.list-table .header-row {
+	height: 35px;
+}
+
+.list-table .header-row th {
+	color: #696969;
+	text-align: left;
+	padding: 0 15px;
+	font-weight: normal;
+}
+
+.list-table .event-row {
+	height: 60px;
+}
+
+.list-table .event-row td {
+	padding: 0 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.status-confirmed {
+	color: #27AE60;
+	text-align: center;
+	font-size: 120px;
+}
+
+.status-not-confirmed {
+	color: #F2C94C;
+	text-align: center;
+	font-size: 120px;
+}
+
+.status-col {
+	width: 40px;
+}
+
+.long-col {
+	width: 60%;
+	max-width: 60%;
+}
+
+.short-col {
+	width: 20%;
+	max-width: 20%;
+}
+
+.list-table tr:nth-child(even) {
+	background-color: white;
+}
