@@ -11,7 +11,7 @@ body {
 
 h1 {
 	color: white;
-	font: 72px/84px 'Roboto', Arial, sans-serif;
+	font: 64px/84px 'Roboto', Arial, sans-serif;
 }
 
 h5 {
@@ -148,6 +148,10 @@ p {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.list-table .event-row:hover {
+	cursor: pointer;
 }
 
 .status-confirmed {

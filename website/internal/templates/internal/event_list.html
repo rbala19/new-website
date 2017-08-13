@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% extends 'internal/base.html' %}
+{% url 'internal:event_list' as event_list_url %}
 
 {% block title %}Events{% endblock %}
 
@@ -14,7 +15,7 @@
 			</tr>
 			{% if event_list %}
 				{% for event in event_list %}
-					<tr class='event-row'>
+					<tr class='event-row' data-url='{{ event_list_url }}{{ event.name }}'>
 						{% if event.confirmed %}
 							<td class='status-confirmed'>&middot;</td>
 						{% else %}
