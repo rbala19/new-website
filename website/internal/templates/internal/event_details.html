@@ -1,0 +1,11 @@
+{% extends 'internal/base.html' %}
+
+{% block title %}{{ event.title }}{% endblock %}
+
+{% block pagecontent %}
+ 	<div class='content'>
+ 		<div>
+ 			<h3>Event name is {{ event.title }}.</h3>
+ 		</div>
+ 	</div>
+ {% endblock %}     

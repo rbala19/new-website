@@ -9,7 +9,9 @@ def event_list(request):
     return render(request, 'internal/event_list.html', context)
 
 def event_details(request, event_name):
-    return HttpResponse("You're looking at event %s" % event_name)
+	event = Event.objects.get(name=event_name)
+	context = {'event': event}
+	return render(request, 'internal/event_details.html', context)
 
 def register(request):
     return HttpResponse("You're trying to register")

@@ -7,11 +7,18 @@ body {
 	overflow: hidden;
 	width: 100vw;
 	height: 100vh;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 h1 {
 	color: white;
 	font: 64px/84px 'Roboto', Arial, sans-serif;
+}
+
+h3 {
+	color: black;
+	margin: 0;
+	font: 20px/150% 'Roboto', Arial, sans-serif;
 }
 
 h5 {
@@ -95,9 +102,9 @@ p {
 	background: none;
 	box-shadow: none;
 	border-radius: 0px;
-	background-color: #7C7C7C;
+	background-color: #2b5ba8;
 	font: bold 20px/150% 'Roboto', Arial, sans-serif;
-	color: #022C51;
+	color: black;
 	cursor: pointer;
 	-moz-transition: all .5s ease;
 	-o-transition: all .5s ease;
@@ -112,6 +119,10 @@ p {
 
 #login-form {
 	margin-top: 100px;
+}
+
+.error-message {
+	color: #f41d1d;
 }
 
 /* Event List View */
@@ -158,12 +169,14 @@ p {
 	color: #27AE60;
 	text-align: center;
 	font-size: 120px;
+	line-height: 0;
 }
 
 .status-not-confirmed {
 	color: #F2C94C;
 	text-align: center;
 	font-size: 120px;
+	line-height: 0;
 }
 
 .status-col {
