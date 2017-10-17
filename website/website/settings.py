@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'internal.apps.InternalConfig',
 ]
 
-SESSION_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 MIDDLEWARE = [
