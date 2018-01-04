@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'internal/base.html' %}
+{% url 'internal:committees' as committees_url %}
+
+{% block title %}Committees{% endblock %}
+
+{% block pagecontent %}
+	<div class="content">
+		<table class="list-table">
+			<tr class="header-row">
+
+				<th class='long-col'>Committees</th>
+
+			</tr>
+			{% if committees %}
+				{% for committee in committees %}
+
+					<tr class='event-row' data-url='{{ committees_url }}{{ committee.name }}'>
+
+						<td class="row">{{committee.name}}</td>
+
+
+					</tr>
+
+				{% endfor %}
+			{% else %}
+				<p>No Members to Display</p>
+			{% endif %}
+		</table>
+	</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'internal/base.html' %}
+
+{% block title %}{{member.first_name}} {{member.last_name}}{% endblock %}
+
+{% block pagecontent %}
+ 	<div class='content'>
+ 		<div>
+            <h3> {{member.first_name}} {{member.last_name}}</h3>
+ 			<h3> {{ member.bio }}</h3>
+ 		</div>
+ 	</div>
+ {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'internal/base.html' %}
+
+{% block title %}Committee members{% endblock %}
+
+{% block pagecontent %}
+	<div class="content">
+		<table class="list-table">
+            {% for member in members %}
+                {% if member.isActive %}
+						<tr class='row'>
+							<td class='half-row'>{{member.first_name}} {{member.last_name}}</td>
+							<td class='half-row'>{{ member.title}}</td>
+
+						</tr>
+					{% endif %}
+            {% endfor %}
+        </table>
+	</div>
+{% endblock %}

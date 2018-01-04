@@ -1,8 +1,31 @@
 <!DOCTYPE html>
 {% extends 'internal/base.html' %}
+{% url 'internal:member_list' as member_list_url %}
 
-{% block title %}Directory{% endblock %}
+{% block title %}Members{% endblock %}
 
 {% block pagecontent %}
+	<div class="content">
+		<table class="list-table">
+			<tr class="header-row">
 
+				<th class='med-col'>Name</th>
+				<th class='med-col'>Role</th>
+			</tr>
+			{% if member_list %}
+				{% for member in member_list %}
+					{% if member.isActive %}
+						<tr class='event-row' data-url='{{ member_list_url }}{{ member.username }}'>
+
+							<td class='half-row'>{{member.first_name}} {{member.last_name}}</td>
+							<td class='half-row'>{{ member.title}}</td>
+
+						</tr>
+					{% endif %}
+				{% endfor %}
+			{% else %}
+				<p>No Members to Display</p>
+			{% endif %}
+		</table>
+	</div>
 {% endblock %}

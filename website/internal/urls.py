@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^register/$', views.register, name='register'),
     url(r'^events/(?P<event_name>.+)/$', views.event_details, name='event_details'),
     url(r'^members/(?P<username>.+)/$', views.member_details, name='member_details'),
+    url(r'^committees/$', views.committees, name='committees'),
+    url(r'^committees/(?P<name>.+)/$', views.committee_members, name='committee_members')
 ]
