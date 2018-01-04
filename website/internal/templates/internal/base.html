@@ -4,6 +4,7 @@
 
 {% url 'internal:event_list' as event_list_url %}
 {% url 'internal:member_list' as member_list_url %}
+{% url 'internal:committees' as committees_url %}
 
 <html>
     <head>
@@ -21,6 +22,7 @@
 			<h5 class='navbar-header'>THE BERKELEY FORUM</h5>
 			<a class="{% active request event_list_url %}" href="{{ event_list_url }}">Events</a>
 			<a class="{% active request member_list_url %}" href="{{ member_list_url }}">Directory</a>
+			<a class="{% active request committees_url %}" href="{{ committees_url }}">Committee</a>
 		</div>
 		<div id="container">
 			{% block pagecontent %}

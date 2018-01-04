@@ -188,6 +188,11 @@ p {
 	max-width: 60%;
 }
 
+.med-col {
+	width: 40%;
+	max-width: 40%;
+}
+
 .short-col {
 	width: 20%;
 	max-width: 20%;

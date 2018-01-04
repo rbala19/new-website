@@ -16,9 +16,12 @@ class MemberAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
     actions = ['delete_selected']
     ordering = ['name']
-    list_filter = ('created_by', 'point_person', 'confirmed', 'complete')
-    list_display = ('name','title', 'speaker_full_name', 'time', 'venue', 'point_person',
-                    'confirmed', 'complete')
+    # list_filter = ('created_by', 'point_person', 'confirmed', 'complete')
+    list_filter = ('created_by', 'point_person', 'confirmed')
+    # list_display = ('name','title', 'speaker_full_name', 'time', 'venue', 'point_person',
+    #                 'confirmed', 'complete')
+    list_display = ('name', 'title', 'speaker_full_name', 'time', 'venue', 'point_person',
+                    'confirmed')
     search_fields = ('name', 'title', 'speaker_first_name', 'speaker_last_name', 'point_person')
 
 class CommitteeAdmin(admin.ModelAdmin):
